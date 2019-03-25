@@ -104,23 +104,4 @@ plotLinkNodElemDespl(nodes,elem,u,esc)
 [val,idx]=max(abs(u));
 dir={'X','Y'};
 fprintf('\nMax.Displ., |U%s| =%12.5e, at Nod.Num:%2d\n',...
-    dir{2-mod(idx,2)},val,ceil(idx/2))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-       
+    dir{2-mod(idx,2)},val,ceil(idx/2))     

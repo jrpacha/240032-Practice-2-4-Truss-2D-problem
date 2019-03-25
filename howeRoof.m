@@ -102,7 +102,7 @@ fprintf('%4d%14.5e%14.5e\n',[(1:numNod)',u(1:2:end),u(2:2:end)]')
 %Post-process
 %Show the original structure and the deformed one
 figure()
-esc=10; %scale factor to magnify displacements
+esc=20; %scale factor to magnify displacements
 plotLinkNodElemDespl(nodes,elem,u,esc)
 %find out mac displacement and the corresponding node.
 [val,idx]=max(abs(u));
@@ -113,25 +113,4 @@ fprintf('\nMax.Displ., |U%s| =%12.5e, at Nod.Num:%2d\n',...
 fprintf('\nDisplacements of the point E (in mm):\n')
 fprintf('%6s%8s%14s\n','NOD.','UX','UY')
 fprintf('%4d%14.5e%14.5e\n',...
-    [numNodE,u(dim*numNodE-1),u(dim*numNodE)]')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-       
+    [numNodE,u(dim*numNodE-1),u(dim*numNodE)]')       
