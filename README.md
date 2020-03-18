@@ -1,6 +1,4 @@
-# matlabSession-240032_05-11-2019
-
-## Matlab session Monday 05-11-2019
+# 240032 Practice 2.3
 
 ### P2.3 - Truss Elements (1D linear structures)
 
