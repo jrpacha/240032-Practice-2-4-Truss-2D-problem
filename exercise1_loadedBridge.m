@@ -107,7 +107,7 @@ fprintf('%4d%14.5e%14.5e\n',[(1:numNod)',u(1:2:end),u(2:2:end)]')
 figure()
 esc=10; %scale factor to magnify displacements
 plotLinkNodElemDespl(nodes,elem,u,esc)
-%find out mac displacement and the corresponding node.
+%find out max displacement and the corresponding node.
 [val,idx]=max(abs(u));
 dir={'X','Y'};
 fprintf('\nMax.Displ., |U%s| =%12.5e, at Nod.Num:%2d\n',...
