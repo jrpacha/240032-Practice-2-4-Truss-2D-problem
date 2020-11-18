@@ -5,7 +5,10 @@ close all
 %Compute the displacements of the point E in the Howe roof structure 
 %(see figure) when using the same bars as in the initial bridge example.
 
-%Note: in this setting node E corresponds to node 3
+Area=3250.0;     %section Area (in mm^2);
+Y=200.0;         %Young modulus, in kN/mm^2 (1GP=1.0 kN/mm^2)
+
+%Note: in this setting node E corresponds to node 3, so
 numNodE=3;
 
 %Geometry
@@ -39,8 +42,7 @@ dim=size(nodes,2);
 plotLinkNodElem(nodes, elem);
 
 %Real constants: Materials and sections area
-Area=3250.0;     %section Area (in mm^2);
-Y=200.0;         %Young modulus, in kN/mm^2 (1GP=1.0 kN/mm^2)
+
 A=Area*ones(1,numElem);
 E=Y*ones(1,numElem);
 
@@ -96,21 +98,26 @@ um=Km\Qm;
 u(freeNods)=um;
 
 %Print out displacements
-fprintf('\n%6s%8s%14s\n','NOD.','UX','UY')
-fprintf('%4d%14.5e%14.5e\n',[(1:numNod)',u(1:2:end),u(2:2:end)]')
+displacements = [u(1:2:end),u(2:2:end)];
+fprintf('\n%6s%10s%14s\n','NOD.','UX(mm)','UY(mm)')
+fprintf('%4d%14.5e%14.5e\n',[(1:numNod)',displacements]')
 
 %Post-process
 %Show the original structure and the deformed one
 figure()
 esc=20; %scale factor to magnify displacements
 plotLinkNodElemDespl(nodes,elem,u,esc)
-%find out mac displacement and the corresponding node.
-[val,idx]=max(abs(u));
-dir={'X','Y'};
-fprintf('\nMax.Displ., |U%s| =%12.5e, at Nod.Num:%2d\n',...
-    dir{2-mod(idx,2)},val,ceil(idx/2))
+%find out max displacements in X and Y directions and the corresponding
+%nodes
+[val,idx]=max(abs(displacements)); %compute the maximum value for the
+                                   %components of each column and gives
+                                   %that component of the column 
+fprintf('\n*Max.Displ.in X direction, max|UX| =%12.5e, at Node:%2d',...
+    val(1),idx(1))
+fprintf('\n*Max.Displ.in Y direction, max|UY| =%12.5e, at Node:%2d\n',...
+    val(2),idx(2))
 
 fprintf('\nDisplacements of the point E (in mm):\n')
-fprintf('%6s%8s%14s\n','NOD.','UX','UY')
+fprintf('%6s%10s%14s\n','NOD.','UX(mm)','UY(mm)')
 fprintf('%4d%14.5e%14.5e\n',...
     [numNodE,u(dim*numNodE-1),u(dim*numNodE)]')       

@@ -126,8 +126,5 @@ fprintf('\nMax.Displ., |U%s| =%12.5e, at Nod.Num:%2d\n',...
 
 
 
-
-
-
   
        
