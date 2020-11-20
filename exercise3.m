@@ -113,7 +113,7 @@ fprintf(fOut,'%7d%17.5e%17.5e%17.5e\n',...
                           [(1:numNod)',u(1:3:end),u(2:3:end),u(3:3:end)]');
 
 %Print out all the reaction forces                      
-fprintf(fOut,'\n%44s\n',                         'Reaction forces (in N)');
+fprintf(fOut,'\n%45s\n',                         'Reaction forces (in N)');
 fprintf(fOut,'%9s%11s%17s%17s\n',                   'NOD.','RX','RY','RZ');
 fprintf(fOut,'%7d%17.5e%17.5e%17.5e\n',...
                        [(1:numNod)',Fr(1:3:end),Fr(2:3:end),Fr(3:3:end)]');
