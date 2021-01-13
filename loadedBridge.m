@@ -113,6 +113,6 @@ fprintf('\n*Max.Displ.in Y direction, max|UY| =%12.5e, at Node:%2d\n',...
 
 %Reaction forces
 R = K*u-Q;
-displacements = [R(1:2:end),R(2:2:end)];
+reacForces = [R(1:2:end),R(2:2:end)];
 fprintf('\n%6s%10s%14s\n','NOD.','RX(kN)','RY(kN)')
-fprintf('%4d%14.5e%14.5e\n',[(1:numNod)',displacements]')
+fprintf('%4d%14.5e%14.5e\n',[(1:numNod)',reacForces]')
