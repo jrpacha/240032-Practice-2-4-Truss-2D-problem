@@ -39,10 +39,10 @@ numNod=size(nodes,1);
 numElem=size(elem,1);
 dim=size(nodes,2);
   
-plotLinkNodElem(nodes, elem);
+numbering=1;
+plotElementsOld(nodes, elem, numbering);
 
 %Real constants: Materials and sections area
-
 A=Area*ones(1,numElem);
 E=Y*ones(1,numElem);
 
@@ -104,9 +104,9 @@ fprintf('%4d%14.5e%14.5e\n',[(1:numNod)',displacements]')
 
 %Post-process
 %Show the original structure and the deformed one
-figure()
-esc=20; %scale factor to magnify displacements
-plotLinkNodElemDespl(nodes,elem,u,esc)
+%figure()
+esc=30; %scale factor to magnify displacements
+plotPlaneNodElemDespl(nodes, elem, u, esc)
 %find out max displacements in X and Y directions and the corresponding
 %nodes
 [val,idx]=max(abs(displacements)); %compute the maximum value for the
