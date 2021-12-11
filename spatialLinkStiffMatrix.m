@@ -20,6 +20,7 @@ coef = ((E(e)*A(e))/Le^3);
 M = [x21*x21, x21*y21, x21*z21;
 y21*x21, y21*y21, y21*z21;
 z21*x21, z21*y21, z21*z21];
-Ke = [ M, -M
--M, M];
+Ke = [ M, -M;
+      -M, M];
 Ke = coef*Ke;
+end
