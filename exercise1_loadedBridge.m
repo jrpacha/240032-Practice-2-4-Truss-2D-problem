@@ -6,32 +6,45 @@ close all
 %Compute the maximum displacement in this new design with same BC.
 
 %Geometry
-H=1800.0*sqrt(3.0);      %mm
+% H=1800.0*sqrt(3.0);      %mm
+% 
+% nodes=[0.0,0.0;
+%        3600.0,0.0;
+%        7200.0,0.0;
+%        10800.0,0.0;
+%        1800.0,H;
+%        5400.0,H;
+%        9000.0,H];
 
-nodes=[0.0,0.0;
-       3600.0,0.0;
-       7200.0,0.0;
-       10800.0,0.0;
-       1800.0,H;
-       5400.0,H;
-       9000.0,H];
-elem=[1,2;
-      2,3;
-      3,4;
-      1,5;
-      2,5;
-      5,6;
-      2,6;
-      3,6;
-      6,7;
-      3,7;
-      4,7];
+nodes = [
+    0 0;
+    3600 0;
+    7200 0;
+    10800 0;
+    1800 3118;
+    5400 3118;
+    9000 3118;
+    ];
+elem = [ 
+    1 2;
+    2 3;
+    3 4;
+    1 5;
+    5 2;
+    5 6;
+    2 6;
+    6 3;
+    6 7;
+    3 7;
+    7 4;
+    ];
 
 numNod=size(nodes,1);
 numElem=size(elem,1);
 dim=size(nodes,2);
-  
-plotLinkNodElem(nodes, elem);
+
+numbering=1;
+plotElementsOld(nodes, elem, numbering);
 
 %Real constants: Materials and sections area
 Area=3250.0;     %section Area (in mm^2);
@@ -106,7 +119,8 @@ fprintf('%4d%14.5e%14.5e\n',[(1:numNod)',u(1:2:end),u(2:2:end)]')
 %Show the original structure and the deformed one
 figure()
 esc=10; %scale factor to magnify displacements
-plotLinkNodElemDespl(nodes,elem,u,esc)
+%plotLinkNodElemDespl(nodes,elem,u,esc)
+plotDeformedTruss(nodes, elem, u, esc)
 %find out max displacement and the corresponding node.
 [val,idx]=max(abs(u));
 dir={'X','Y'};

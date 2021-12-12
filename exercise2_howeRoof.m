@@ -21,6 +21,7 @@ nodes=[0.0,0.0;
        2.5e3,2.0e3;
        5.0e3,4.0e3;
        7.5e3,2.0e3];
+   
 elem=[1,2;
       2,3;
       3,4;
@@ -106,7 +107,8 @@ fprintf('%4d%14.5e%14.5e\n',[(1:numNod)',displacements]')
 %Show the original structure and the deformed one
 %figure()
 esc=30; %scale factor to magnify displacements
-plotPlaneNodElemDespl(nodes, elem, u, esc)
+%plotPlaneNodElemDespl(nodes, elem, u, esc)
+plotDeformedTruss(nodes, elem, u, esc)
 %find out max displacements in X and Y directions and the corresponding
 %nodes
 [val,idx]=max(abs(displacements)); %compute the maximum value for the
