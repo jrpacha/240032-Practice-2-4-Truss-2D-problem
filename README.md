@@ -3,7 +3,7 @@
 ### P2.3 - 2D Structural Linear Link Problem: Truss 2D problem
 
 You can find the session's guide ---together with other extra material files---,
-at professor Antonio Susin's 'Numerical Factory', 
+at professor Antonio Susin's "Numerical Factory", 
 
 https://numfactory.upc.edu/numfactory/subjects/FEM/FEM/practices/P2.3/html/P2_3_FemLink2D_en.html
 
