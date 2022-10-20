@@ -1,6 +1,6 @@
-# 240032 Practice 2.3
+# 240032 Practice 2.4
 
-### P2.3 - 2D Structural Linear Link Problem: Truss 2D problem
+### P2.4 - 2D Structural Linear Link Problem: Truss 2D problem
 
 You can find the session's guide ---together with other extra material files---,
 at professor Antonio Susin's 'Numerical Factory', 
