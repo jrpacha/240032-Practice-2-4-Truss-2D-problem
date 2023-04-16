@@ -29,6 +29,10 @@ nodes=[2*D,0,0;
 elem=[1,4;
       3,4;
       2,4];
+
+numbering=1;
+plotElementsOld(nodes,elem,numbering)
+%plotElements(nodes,elem,numbering)
       
 numNod=size(nodes,1);
 numElem=size(elem,1);
@@ -98,6 +102,10 @@ u(freeNods)=um;
 
 %Reaction forces
 Fr=K*u-Q;
+
+%Plot deformed structure
+esc=2
+plotDeformedTruss(nodes,elem,u,esc)
 
 %Print out displacements at node nodDisp
 %fprintf(fOut,'%35s\n\n',                                      'Part (B)');

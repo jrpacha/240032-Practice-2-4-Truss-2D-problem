@@ -41,6 +41,7 @@ numElem=size(elem,1);
 dim=size(nodes,2);
   
 numbering=1;
+%plotElementsOld(nodes, elem, numbering);
 plotElementsOld(nodes, elem, numbering);
 
 %Real constants: Materials and sections area

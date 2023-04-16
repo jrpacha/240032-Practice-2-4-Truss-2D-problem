@@ -6,25 +6,26 @@ close all
 %Compute the maximum displacement in this new design with same BC.
 
 %Geometry
-% H=1800.0*sqrt(3.0);      %mm
-% 
-% nodes=[0.0,0.0;
-%        3600.0,0.0;
-%        7200.0,0.0;
-%        10800.0,0.0;
-%        1800.0,H;
-%        5400.0,H;
-%        9000.0,H];
+H=1800.0*sqrt(3.0);      %mm
 
-nodes = [
-    0 0;
-    3600 0;
-    7200 0;
-    10800 0;
-    1800 3118;
-    5400 3118;
-    9000 3118;
-    ];
+nodes=[0.0,0.0;
+       3600.0,0.0;
+       7200.0,0.0;
+       10800.0,0.0;
+       1800.0,H;
+       5400.0,H;
+       9000.0,H];
+
+% nodes = [
+%     0 0;
+%     3600 0;
+%     7200 0;
+%     10800 0;
+%     1800 3118;
+%     5400 3118;
+%     9000 3118;
+%     ];
+
 elem = [ 
     1 2;
     2 3;
@@ -44,6 +45,7 @@ numElem=size(elem,1);
 dim=size(nodes,2);
 
 numbering=1;
+%plotElementsOld(nodes, elem, numbering);
 plotElementsOld(nodes, elem, numbering);
 
 %Real constants: Materials and sections area
